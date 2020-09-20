@@ -1,0 +1,25 @@
+{
+  "name": "@todo-app/frontend",
+  "version": "0.0.1",
+  "description": "todo-app frontend",
+  "author": "Aydn Vasilyev<nevrikofficial@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "prod": "yarn build && yarn start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "core-js": "3",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "vue-jest": "^4.0.0-0"
+  }
+}

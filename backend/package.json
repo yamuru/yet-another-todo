@@ -1,0 +1,32 @@
+{
+  "name": "@todo-app/backend",
+  "version": "0.0.1",
+  "description": "todo-app backend",
+  "author": "Aydyn Vasilyev<nevrikofficial@gmail.com>",
+  "private": true,
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true nodemon --exec \"keystone dev --entry=./src/index.js \"",
+    "build": "cross-env NODE_ENV=production keystone build --entry=./src/index.js",
+    "start": "cross-env NODE_ENV=production keystone start",
+    "prod": "yarn build && yarn start",
+    "create-tables": "cross-env keystone create-tables --entry=./src/index.js"
+  },
+  "dependencies": {
+    "@keystonejs/adapter-mongoose": "^9.0.4",
+    "@keystonejs/app-admin-ui": "^7.3.3",
+    "@keystonejs/app-graphql": "^6.1.1",
+    "@keystonejs/app-nuxt": "^5.1.5",
+    "@keystonejs/auth-password": "^5.1.14",
+    "@keystonejs/fields": "^17.1.1",
+    "@keystonejs/keystone": "^14.0.1",
+    "@keystonejs/server-side-graphql-client": "^1.1.1",
+    "cross-env": "^7.0.2",
+    "@todo-app/config": "0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

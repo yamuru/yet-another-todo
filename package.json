@@ -1,0 +1,40 @@
+{
+  "name": "todo-app",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:backend": "PORT=1234 yarn workspace @todo-app/backend dev",
+    "prod:backend": "PORT=1234 yarn workspace @todo-app/backend prod",
+    "dev:frontend": "yarn workspace @todo-app/frontend dev",
+    "prod:frontend": "yarn workspace @todo-app/frontend prod",
+    "lint": "eslint ./ --ext .js,.vue",
+    "lint:write": "eslint ./ --ext .js,.vue --fix"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^7.0.0-beta.3",
+    "husky": "^4.3.0",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "npm run lint:write",
+      "git add"
+    ]
+  }
+}
