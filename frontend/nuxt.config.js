@@ -16,7 +16,15 @@ export default {
   },
   srcDir: './src',
   loading: { color: '#fff' },
+  modules: ['@nuxtjs/apollo'],
   buildModules: ['@nuxtjs/vuetify'],
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://192.168.0.17:1234/admin/api',
+      },
+    },
+  },
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
