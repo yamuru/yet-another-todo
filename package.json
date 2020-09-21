@@ -33,7 +33,7 @@
   },
   "lint-staged": {
     "*.(js|jsx)": [
-      "npm run lint:write",
+      "yarn lint:write",
       "git add"
     ]
   }
