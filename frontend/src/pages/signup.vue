@@ -1,30 +1,34 @@
 <template>
-  <v-main>
+  <v-main class="signup-page">
     <v-container class="fill-height" fluid>
       <v-row align="center" justify="center">
-        <v-col cols="12" sm="8" md="4">
+        <v-col cols="12" sm="8" md="4" lg="3">
           <v-card class="elevation-12">
-            <v-toolbar color="primary" dark flat>
-              <v-toolbar-title>Sign up</v-toolbar-title>
-              <v-spacer />
-              <v-tooltip bottom>
-                <template>
-                  <v-btn>
-                    <v-icon>mdi-code-tags</v-icon>
-                  </v-btn>
-                </template>
-                <span>Source</span>
-              </v-tooltip>
-            </v-toolbar>
             <v-card-text>
               <v-form>
-                <v-text-field label="Email" name="email" prepend-icon="mdi-account" type="text" />
+                <v-text-field
+                  autofocus
+                  label="Username"
+                  placeholder="Alan"
+                  name="username"
+                  append-icon="mdi-account"
+                  type="text"
+                />
+
+                <v-text-field
+                  label="Email"
+                  placeholder="example@example.com"
+                  name="email"
+                  append-icon="mdi-email"
+                  type="text"
+                />
 
                 <v-text-field
                   id="password"
                   label="Password"
+                  placeholder="k44l9g8Sp11Zm9Z7"
                   name="password"
-                  prepend-icon="mdi-lock"
+                  append-icon="mdi-lock"
                   type="password"
                 />
               </v-form>
@@ -32,6 +36,7 @@
             <v-card-actions>
               <v-spacer />
               <v-btn color="primary"> Sign up </v-btn>
+              <v-spacer />
             </v-card-actions>
           </v-card>
         </v-col>
@@ -41,5 +46,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  head: {
+    title: '- Sign up',
+  },
+};
 </script>
+
+<style lang="scss" scoped>
+.signup-page {
+  background-color: $primary;
+}
+</style>
