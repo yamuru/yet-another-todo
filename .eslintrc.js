@@ -6,7 +6,7 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  extends: ['airbnb-base', 'plugin:vue/recommended'],
+  extends: ['airbnb-base', 'plugin:vue/base'],
   plugins: ['prettier', 'vue'],
   parser: 'vue-eslint-parser',
   parserOptions: {

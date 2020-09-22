@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>hello layout</p>
+    <p>hello app layout (not login page)</p>
     <Nuxt />
   </div>
 </template>
