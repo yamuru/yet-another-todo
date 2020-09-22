@@ -8,6 +8,7 @@
               <v-form>
                 <v-text-field
                   autofocus
+                  label="Email"
                   placeholder="example@example.com"
                   name="email"
                   append-icon="mdi-email"
@@ -16,7 +17,8 @@
 
                 <v-text-field
                   id="password"
-                  placeholder="123123123"
+                  label="Password"
+                  placeholder="k44l9g8Sp11Zm9Z7"
                   name="password"
                   append-icon="mdi-lock"
                   type="password"
