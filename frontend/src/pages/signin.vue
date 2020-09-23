@@ -26,6 +26,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer />
+            <v-btn color="primary" nuxt to="/"> Back </v-btn>
             <v-btn color="primary"> Sign in </v-btn>
             <v-spacer />
           </v-card-actions>
