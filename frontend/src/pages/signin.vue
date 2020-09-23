@@ -1,40 +1,38 @@
 <template>
-  <v-main class="signin-page">
-    <v-container class="fill-height" fluid>
-      <v-row align="center" justify="center">
-        <v-col cols="12" sm="8" md="4" lg="3">
-          <v-card class="elevation-12">
-            <v-card-text>
-              <v-form>
-                <v-text-field
-                  autofocus
-                  label="Email"
-                  placeholder="example@example.com"
-                  name="email"
-                  append-icon="mdi-email"
-                  type="text"
-                />
+  <v-container class="fill-height" fluid>
+    <v-row align="center" justify="center">
+      <v-col cols="12" sm="8" md="4" lg="3">
+        <v-card class="elevation-12">
+          <v-card-text>
+            <v-form>
+              <v-text-field
+                autofocus
+                label="Email"
+                placeholder="example@example.com"
+                name="email"
+                append-icon="mdi-email"
+                type="text"
+              />
 
-                <v-text-field
-                  id="password"
-                  label="Password"
-                  placeholder="k44l9g8Sp11Zm9Z7"
-                  name="password"
-                  append-icon="mdi-lock"
-                  type="password"
-                />
-              </v-form>
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer />
-              <v-btn color="primary"> Sign in </v-btn>
-              <v-spacer />
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-main>
+              <v-text-field
+                id="password"
+                label="Password"
+                placeholder="k44l9g8Sp11Zm9Z7"
+                name="password"
+                append-icon="mdi-lock"
+                type="password"
+              />
+            </v-form>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer />
+            <v-btn color="primary"> Sign in </v-btn>
+            <v-spacer />
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
