@@ -29,6 +29,8 @@ module.exports = {
     // [frontend] doesn't understand '@/components/somecomponent' with this rule
     'import/no-unresolved': 'off',
 
+    'no-extra-boolean-cast': 'off',
+
     'prettier/prettier': 'error',
   },
 };
