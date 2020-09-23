@@ -34,7 +34,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer />
-            <v-btn color="primary" nuxt to="/"> Sign out </v-btn>
+            <v-btn color="primary" nuxt to="/" no-prefetch> Sign out </v-btn>
             <v-spacer />
           </v-card-actions>
         </v-card>
