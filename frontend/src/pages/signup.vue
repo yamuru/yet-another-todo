@@ -50,9 +50,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.signup-page {
-  background-color: $primary;
-}
-</style>
