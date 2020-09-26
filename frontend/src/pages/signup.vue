@@ -96,8 +96,6 @@ export default {
           })
           .then(({ data }) => data && data.authenticateUserWithPassword);
 
-        console.log(res);
-
         await this.$apolloHelpers.onLogin(res.token);
         this.$router.push({ path: '/home' });
       } catch {
