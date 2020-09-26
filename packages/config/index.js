@@ -11,6 +11,7 @@ const backendConfig = {
   db: {
     mongoURI: 'mongodb://localhost/todo-app',
   },
+  cookieSecret: 's%3Al3ozSdvQ83TtC5RvJ.CibaQoHtaY0H3QOB1kqR8H2A',
 };
 
 module.exports = {

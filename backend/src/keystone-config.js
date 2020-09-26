@@ -7,6 +7,7 @@ const { username, email, password } = config.admin.credentials;
 
 module.exports = {
   adapter: new MongooseAdapter({ mongoUri: config.db.mongoURI }),
+  cookieSecret: config.cookieSecret,
   onConnect: async (keystone) => {
     // Creates the admin user at the start if there is no admin
     const admin = await getItems({
