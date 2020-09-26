@@ -1,8 +1,9 @@
-const { Text, Relationship, Checkbox, Password } = require('@keystonejs/fields');
+const { Text, Checkbox, Password } = require('@keystonejs/fields');
 
 module.exports = {
   access: {
     auth: true,
+    create: true,
   },
   fields: {
     isAdmin: {
@@ -14,27 +15,26 @@ module.exports = {
       isRequired: true,
     },
     email: {
-      access: ({ existingItem, authentication: { item } }) =>
-        item.isAdmin || existingItem.id === item.id,
+      access: {
+        create: true,
+        read: ({ existingItem, authentication: { item } }) =>
+          item.isAdmin || existingItem.id === item.id,
+        update: ({ existingItem, authentication: { item } }) =>
+          item.isAdmin || existingItem.id === item.id,
+      },
       type: Text,
       isRequired: true,
       isUnique: true,
     },
     password: {
       access: {
+        create: true,
         read: ({ authentication }) => authentication.item.isAdmin,
         update: ({ existingItem, authentication: { item } }) =>
           item.isAdmin || existingItem.id === item.id,
       },
       type: Password,
       isRequired: true,
-    },
-    todoList: {
-      access: ({ existingItem, authentication: { item } }) =>
-        item.isAdmin || existingItem.id === item.id,
-      type: Relationship,
-      ref: 'Todo',
-      many: true,
     },
   },
 };

@@ -52,6 +52,13 @@ export default {
       todos: [],
     };
   },
+  beforeCreate() {
+    if (!!this.$apolloHelpers.getToken()) {
+      this.$router.push({
+        path: '/home',
+      });
+    }
+  },
   methods: {
     addTodo() {
       this.todos.push(this.todoInput);

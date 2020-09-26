@@ -1,0 +1,11 @@
+mutation createTodo($userID: ID!, $task: String!) {
+  createTodo(
+    data: {
+      task: $task
+      owner: { connect: { id: $userID } }
+    }
+  ) {
+    id
+    task
+  }
+}

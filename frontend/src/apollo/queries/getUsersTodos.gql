@@ -1,0 +1,6 @@
+query getUsersTodos($userID: ID!) {
+  allTodos(where: { owner: { id: $userID } }) {
+    id
+    task
+  }
+}
