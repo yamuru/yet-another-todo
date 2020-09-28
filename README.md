@@ -10,4 +10,6 @@ Packages:
   - config: dotenv?
 
 Other:
-  - https
+  - https (nginx)
+  - Dockerfile
+  - docker-compose
