@@ -1,3 +1,5 @@
+const { frontendConfig: config } = require('@todo-app/config');
+
 export default {
   head: {
     titleTemplate: 'Yet Another Todo %s',
@@ -18,7 +20,7 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://192.168.0.17:1234/admin/api',
+        httpEndpoint: config.graphqlAPI,
       },
     },
   },
@@ -33,8 +35,8 @@ export default {
     },
   },
   server: {
-    port: 4321,
-    host: '0.0.0.0',
+    port: config.nuxt.port,
+    host: config.nuxt.host,
   },
   build: {
     corejs: '3',
