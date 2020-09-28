@@ -1,12 +1,16 @@
 const { MongooseAdapter } = require('@keystonejs/adapter-mongoose');
 const { createItem, getItems } = require('@keystonejs/server-side-graphql-client');
 
+const expressSession = require('express-session');
+const MongoStore = require('connect-mongo')(expressSession);
+
 const { backendConfig: config } = require('@todo-app/config');
 
 const { username, email, password } = config.admin.credentials;
 
 module.exports = {
   adapter: new MongooseAdapter({ mongoUri: config.db.mongoURI }),
+  sessionStore: new MongoStore({ url: config.db.mongoURI }),
   cookieSecret: config.cookieSecret,
   onConnect: async (keystone) => {
     // Creates the admin user at the start if there is no admin
