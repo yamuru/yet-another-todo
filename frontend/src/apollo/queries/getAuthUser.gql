@@ -1,4 +1,4 @@
-query authUser {
+query getAuthUser {
   authenticatedUser {
     id
     username

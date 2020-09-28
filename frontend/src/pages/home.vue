@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import authenticatedUser from '@/apollo/queries/authUser';
+import getAuthUser from '@/apollo/queries/getAuthUser';
 import getUsersTodos from '@/apollo/queries/getUsersTodos';
 import unauthenticateUser from '@/apollo/mutations/unauth';
 import createTodo from '@/apollo/mutations/createTodo';
@@ -106,7 +106,7 @@ export default {
     async getUser() {
       const user = await this.$apollo
         .query({
-          query: authenticatedUser,
+          query: getAuthUser,
         })
         .then(({ data }) => data && data.authenticatedUser);
       return user;
