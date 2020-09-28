@@ -9,28 +9,8 @@
             <v-spacer />
           </v-card-title>
           <v-card-text>
-            <v-list>
-              <v-list-item v-for="todo in todos" :key="todo">
-                <v-list-item-content>
-                  <v-list-item-title v-text="todo"></v-list-item-title>
-                </v-list-item-content>
-                <v-list-item-action>
-                  <v-btn icon @click="deleteTodo(todo)">
-                    <v-icon color="grey lighten-1">mdi-check</v-icon>
-                  </v-btn>
-                </v-list-item-action>
-              </v-list-item>
-            </v-list>
-            <v-form @submit.prevent="addTodo">
-              <v-text-field
-                v-model="todoInput"
-                placeholder="What should be done?"
-                required
-                clearable
-                append-outer-icon="mdi-send"
-                @click:append-outer="addTodo"
-              ></v-text-field>
-            </v-form>
+            <todo-list :todos="todos" @deleteTodo="deleteTodo"></todo-list>
+            <todo-input @createTodo="createTodo"></todo-input>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
@@ -45,10 +25,16 @@
 </template>
 
 <script>
+import TodoList from '@/components/TodoList';
+import TodoInput from '@/components/TodoInput';
+
 export default {
+  components: {
+    'todo-input': TodoInput,
+    'todo-list': TodoList,
+  },
   data() {
     return {
-      todoInput: '',
       todos: [],
     };
   },
@@ -60,12 +46,15 @@ export default {
     }
   },
   methods: {
-    addTodo() {
-      this.todos.push(this.todoInput);
-      this.todoInput = '';
+    createTodo(task) {
+      this.todos.push({
+        id: this.todos.length,
+        task,
+      });
     },
-    deleteTodo(todo) {
-      this.todos.splice(this.todos.indexOf(todo), 1);
+    deleteTodo(id) {
+      const deletedTodoIndex = this.todos.findIndex((todo) => todo.id === id);
+      this.todos.splice(deletedTodoIndex, 1);
     },
   },
 };

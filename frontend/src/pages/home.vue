@@ -11,29 +11,8 @@
             <v-spacer />
           </v-card-title>
           <v-card-text>
-            <v-list>
-              <v-list-item v-for="todo in todos" :key="todo.id">
-                <v-list-item-content>
-                  <v-list-item-title v-text="todo.task"></v-list-item-title>
-                </v-list-item-content>
-                <v-list-item-action>
-                  <v-btn icon @click="deleteTodo(todo.id)">
-                    <v-icon color="grey lighten-1">mdi-check</v-icon>
-                  </v-btn>
-                </v-list-item-action>
-              </v-list-item>
-            </v-list>
-            <v-form @submit.prevent="createTodo">
-              <v-text-field
-                autofocus
-                v-model="todoInput"
-                placeholder="What should be done?"
-                required
-                clearable
-                append-outer-icon="mdi-send"
-                @click:append-outer="createTodo"
-              ></v-text-field>
-            </v-form>
+            <todo-list :todos="todos" @deleteTodo="deleteTodo"></todo-list>
+            <todo-input @createTodo="createTodo"></todo-input>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
@@ -53,9 +32,16 @@ import unauthenticateUser from '@/apollo/mutations/unauth';
 import createTodo from '@/apollo/mutations/createTodo';
 import deleteTodo from '@/apollo/mutations/deleteTodo';
 
+import TodoInput from '@/components/TodoInput';
+import TodoList from '@/components/TodoList';
+
 export default {
   head: {
     title: '- Home',
+  },
+  components: {
+    'todo-input': TodoInput,
+    'todo-list': TodoList,
   },
   data() {
     return {
@@ -75,31 +61,30 @@ export default {
     this.todos = await this.getTodos(this.user.id);
   },
   methods: {
-    async createTodo() {
+    async createTodo(task) {
       const todo = await this.$apollo
         .mutate({
           mutation: createTodo,
           variables: {
             userID: this.user.id,
-            task: this.todoInput,
+            task,
           },
         })
         .then(({ data }) => data && data.createTodo);
 
       this.todos.push(todo);
-      this.todoInput = '';
     },
-    async deleteTodo(todoID) {
+    async deleteTodo(id) {
       await this.$apollo
         .mutate({
           mutation: deleteTodo,
           variables: {
-            todoID,
+            id,
           },
         })
         .then(({ data }) => data && data.id);
 
-      const deletedTodoIndex = this.todos.findIndex((todo) => todo.id === todoID);
+      const deletedTodoIndex = this.todos.findIndex((todo) => todo.id === id);
 
       this.todos.splice(deletedTodoIndex, 1);
     },
