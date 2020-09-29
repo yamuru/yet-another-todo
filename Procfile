@@ -1,1 +1,1 @@
-web: ./scripts/heroku.sh
+web: sudo ./scripts/heroku.sh
