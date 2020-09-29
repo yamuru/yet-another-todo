@@ -8,9 +8,9 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development PORT=12345 DISABLE_LOGGING=true nodemon --exec \"keystone dev --entry=./src/index.js \"",
-    "build": "cross-env NODE_ENV=production PORT=12345 keystone build --entry=./src/index.js",
-    "start": "cross-env NODE_ENV=production PORT=12345 keystone start --entry=./src/index.js",
+    "dev": "cross-env NODE_ENV=development PORT=1234 DISABLE_LOGGING=true nodemon --exec \"keystone dev --entry=./src/index.js \"",
+    "build": "cross-env NODE_ENV=production PORT=1234 keystone build --entry=./src/index.js",
+    "start": "cross-env NODE_ENV=production PORT=1234 keystone start --entry=./src/index.js",
     "prod": "yarn build && yarn start"
   },
   "dependencies": {
