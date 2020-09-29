@@ -1,1 +1,1 @@
-web: sudo ./scripts/heroku.sh
+web: yarn prod

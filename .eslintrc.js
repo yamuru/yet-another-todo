@@ -21,6 +21,7 @@ module.exports = {
     'no-mixed-operators': 'off',
     'space-before-function-paren': 0,
     'implicit-arrow-linebreak': 'off',
+    'operator-linebreak': 'off',
 
     // [frontend] doesn't understand '@/components/somecomponent' with this rule
     'import/no-unresolved': 'off',
