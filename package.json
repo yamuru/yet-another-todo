@@ -7,8 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:backend": "yarn workspace @todo-app/backend dev",
-    "prod:backend": "yarn workspace @todo-app/backend prod",
+    "dev:backend": "PORT=1234 yarn workspace @todo-app/backend dev",
+    "prod:backend": "PORT=1234 yarn workspace @todo-app/backend prod",
     "dev:frontend": "yarn workspace @todo-app/frontend dev",
     "prod:frontend": "yarn workspace @todo-app/frontend prod",
     "dev": "lerna run dev --parallel",
