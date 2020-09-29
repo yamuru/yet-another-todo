@@ -14,11 +14,12 @@
   "dependencies": {
     "@todo-app/config": "0.0.1",
     "@nuxtjs/apollo": "^4.0.1-rc.3",
+
+    "@nuxtjs/vuetify": "^1.0.0",
     "core-js": "3",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
