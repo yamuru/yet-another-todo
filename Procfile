@@ -1,1 +1,1 @@
-web: yarn && yarn prod:frontend
+web: yarn prod:frontend
