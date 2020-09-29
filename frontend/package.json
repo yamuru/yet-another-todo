@@ -12,6 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@todo-app/config": "0.0.1",
     "@nuxtjs/apollo": "^4.0.1-rc.3",
     "core-js": "3",
     "nuxt": "^2.0.0"
