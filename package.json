@@ -14,8 +14,7 @@
     "dev": "lerna run dev --parallel",
     "prod": "lerna run prod --parallel",
     "lint": "eslint ./ --ext .js,.vue",
-    "lint:write": "eslint ./ --ext .js,.vue --fix",
-    "start": "yarn dev:backend"
+    "lint:write": "eslint ./ --ext .js,.vue --fix"
   },
   "dependencies": {
     "lerna": "^3.22.1"
