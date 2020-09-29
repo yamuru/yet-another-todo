@@ -13,7 +13,6 @@
     "prod:frontend": "yarn workspace @todo-app/frontend prod",
     "dev": "lerna run dev --parallel",
     "prod": "lerna run prod --parallel",
-    "test": "lerna run test",
     "lint": "eslint ./ --ext .js,.vue",
     "lint:write": "eslint ./ --ext .js,.vue --fix"
   },
