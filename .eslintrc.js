@@ -22,10 +22,6 @@ module.exports = {
     'space-before-function-paren': 0,
     'implicit-arrow-linebreak': 'off',
 
-    // [frontend] @nuxtjs/vuetify installed already,
-    // but this requires vuetify to be specified in package.json
-    'import/no-extraneous-dependencies': 'off',
-
     // [frontend] doesn't understand '@/components/somecomponent' with this rule
     'import/no-unresolved': 'off',
 
