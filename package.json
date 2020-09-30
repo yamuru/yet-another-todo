@@ -37,8 +37,7 @@
   },
   "lint-staged": {
     "*.(js|vue)": [
-      "yarn lint",
-      "git add"
+      "yarn lint"
     ]
   }
 }
