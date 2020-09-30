@@ -1,2 +1,0 @@
-- Write README.md
-  - Write tests
